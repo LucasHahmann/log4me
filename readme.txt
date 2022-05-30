@@ -1,0 +1,1 @@
+A simple logger for personal usage.

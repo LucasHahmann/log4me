@@ -1,0 +1,8 @@
+Change Log
+==========
+
+0.0.1 (30.05.2022)
+------------------
+- First release
+    - Logs (Info, Success, Warning, Error)
+    - Print the logs to a log file
