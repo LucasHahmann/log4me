@@ -1,10 +1,10 @@
-# log4me
+ log4me
 
 A simple python logger for personal usage.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/nagstable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/nagstable/) to install log4me.
 
 ```bash
 pip install log4me

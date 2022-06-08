@@ -6,3 +6,11 @@ Change Log
 - First release
     - Logs (Info, Success, Warning, Error)
     - Print the logs to a log file
+
+0.0.2 (31.05.2022)
+-----------------
+- Change the readme
+
+0.0.3 (08.06.2022)
+-----------------
+- Autmatic create directory

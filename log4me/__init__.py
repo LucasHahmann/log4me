@@ -1,5 +1,5 @@
 # Imports
-import datetime
+import datetime, os
 
 # Set the color theme
 class bcolors:
@@ -15,8 +15,22 @@ class bcolors:
 class Logger:
     # Init with a name and a path for the logs
     def __init__(self, name, path):
+        if name == "":
+            raise ValueError('Give the logger a name!')
+        if path == "":
+            raise ValueError('Provide a path')
         self.name = name
         self.path = path
+        self.createDict()
+    def createDict(self):
+        try:
+            # Create target Directory
+            tmpString = self.path
+            d = {"/":"", ".":""}
+            tmp = self.replace_all(tmpString, d)
+            os.mkdir(tmp)
+        except FileExistsError:
+            pass
 
     def getTime(self):
         return datetime.datetime.now()
