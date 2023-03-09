@@ -2,4 +2,4 @@ from __init__ import *
 
 log = Logger("Test", "./log/")
 
-log.success("Test", "Yeah!")
+log.info("Test", "Yeah!", "http://test.com")

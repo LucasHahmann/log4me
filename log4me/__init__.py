@@ -36,22 +36,30 @@ class Logger:
         return datetime.datetime.now()
     
     # Get the log string
-    def info(self, head, message):
+    def info(self, head, message, api):
+        if api == None:
+            apiCall(api, head, message)
         string = f"{self.getTime()} [{bcolors.INFO + head + bcolors.ENDC}] {message}"
         self.writeToLog(string + "\n")
         print(string)
 
-    def success(self, head, message):
+    def success(self, head, message, api):
+        if api == None:
+            apiCall(api, head, message)
         string = f"{self.getTime()} [{bcolors.SUCCESS + head + bcolors.ENDC}] {message}"
         self.writeToLog(string + "\n")
         print(string)
 
-    def warning(self, head, message):
+    def warning(self, head, message, api):
+        if api == None:
+            apiCall(api, head, message)
         string = f"{self.getTime()} [{bcolors.WARNING + head + bcolors.ENDC}] {message}"
         self.writeToLog(string + "\n")
         print(string)
 
-    def error(self, head, message):
+    def error(self, head, message, api):
+        if api == None:
+            apiCall(api, head, message)
         string = f"{self.getTime()} [{bcolors.ERROR + head + bcolors.ENDC}] {message}"
         self.writeToLog(string + "\n")
         print(string)
@@ -60,6 +68,9 @@ class Logger:
         for i, j in dic.items():
             text = text.replace(i, j)
         return text
+    def apiCall(self, url, head, message):
+        myobj = {head: message}
+        x  = requests.post(url, json = myobj)
     # 
     def writeToLog(self, string):
         # Replace the color theme 
